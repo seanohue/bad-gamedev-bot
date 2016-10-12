@@ -1,1 +1,4 @@
 .rbenv-vars
+vendor/
+*.lock
+.bundle/
