@@ -7,4 +7,4 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV["ACCESS_SECRET"]
 end
 
-client.update("test: this was sent using a twitter ruby gem")
+client.update("i have ideas 4 gaems just need programers to maek game (and friend) #myFirstTweet")
