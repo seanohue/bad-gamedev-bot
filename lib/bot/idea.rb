@@ -68,7 +68,9 @@ def get_bad_idea()
     'find the ' + (characters + items).sample,
     'get to ' + settings.sample,
     'win the ' + items.sample,
-    'make the best ' + items.sample
+    'make the best ' + items.sample,
+    'never ' + goals.sample,
+    'always ' + goals.sample
   ]
 
   contexts = [
