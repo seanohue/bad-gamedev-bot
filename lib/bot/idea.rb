@@ -17,7 +17,8 @@ def get_bad_idea()
     'anyone want game ',
     'wealthy game idea ',
     'ambitious project: ',
-    'maek game '
+    'maek game ',
+    'lets do a game'
   ]
 
   characters = [
@@ -53,10 +54,14 @@ def get_bad_idea()
     'a castle',
     'mexico',
     'dungeon',
-    'helicopter'
+    'helicopter',
+    'comet',
+    'the moon',
+    'jupiter colony'
   ]
 
   items = [
+    'space ship',
     'potato',
     'hat',
     'planet',
@@ -70,7 +75,10 @@ def get_bad_idea()
     'taco',
     'friendship',
     'potion',
-    'helicopter'
+    'helicopter',
+    'boject',
+    'meteor',
+    'horse'
   ]
 
   goals = [
