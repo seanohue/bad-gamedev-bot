@@ -44,12 +44,29 @@ def get_bad_idea()
     'mexico'
   ]
 
+  items = [
+    'potato',
+    'hat',
+    'planet',
+    'gold medal',
+    'sword',
+    'shooty gun',
+    'computer',
+    'machine',
+    'house',
+    'castle',
+    'taco',
+    'friendship'
+  ]
+
   goals = [
     'be biggest ' + characters.sample,
     'beat up all the ' + characters.sample,
     'become ' + (characters + settings).sample,
-    'find the ' + characters.sample,
-    'get to ' + settings.sample
+    'find the ' + (characters + items).sample,
+    'get to ' + settings.sample,
+    'win the ' + items.sample,
+    'make the best ' + items.sample
   ]
 
   contexts = [
