@@ -34,7 +34,11 @@ def get_bad_idea()
     'giant monstar',
     'skeleton',
     'police',
-    'burglars'
+    'burglars',
+    'fireman',
+    'princess',
+    'pony',
+    'helicopter'
   ]
 
   settings = [
@@ -48,7 +52,8 @@ def get_bad_idea()
     'wild west',
     'a castle',
     'mexico',
-    'dungeon'
+    'dungeon',
+    'helicopter'
   ]
 
   items = [
@@ -64,7 +69,8 @@ def get_bad_idea()
     'castle',
     'taco',
     'friendship',
-    'potion'
+    'potion',
+    'helicopter'
   ]
 
   goals = [
