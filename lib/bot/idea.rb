@@ -16,7 +16,8 @@ def get_bad_idea()
     'best project ',
     'anyone want game ',
     'wealthy game idea ',
-    'ambitious project: '
+    'ambitious project: ',
+    'maek game '
   ]
 
   characters = [
@@ -30,7 +31,10 @@ def get_bad_idea()
     'superhero',
     'boat',
     'shark',
-    'giant monstar'
+    'giant monstar',
+    'skeleton',
+    'police',
+    'burglars'
   ]
 
   settings = [
@@ -43,7 +47,8 @@ def get_bad_idea()
     'dragon lair',
     'wild west',
     'a castle',
-    'mexico'
+    'mexico',
+    'dungeon'
   ]
 
   items = [
@@ -58,7 +63,8 @@ def get_bad_idea()
     'house',
     'castle',
     'taco',
-    'friendship'
+    'friendship',
+    'potion'
   ]
 
   goals = [
@@ -69,7 +75,8 @@ def get_bad_idea()
     'get to ' + settings.sample,
     'win the ' + items.sample,
     'make the best ' + items.sample,
-    'destroy the ' + (characters + settings + items).sample
+    'destroy the ' + (characters + settings + items).sample,
+    'hide from the ' + characters.sample
   ]
 
   goals += [
