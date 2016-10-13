@@ -1,5 +1,3 @@
-
-
 def get_bad_idea()
   starters = [
     'i have good idea: ',
@@ -18,7 +16,7 @@ def get_bad_idea()
     'wealthy game idea ',
     'ambitious project: ',
     'maek game ',
-    'lets do a game'
+    'lets do a game '
   ]
 
   characters = [
@@ -39,10 +37,16 @@ def get_bad_idea()
     'fireman',
     'princess',
     'pony',
-    'helicopter'
+    'helicopter',
+    'aliens',
+    'floppy bird',
+    'garbage person',
+    'swamp thing',
+    'space station'
   ]
 
   settings = [
+    'dumpster',
     'a boat',
     'big city town',
     'ocean island',
@@ -57,7 +61,8 @@ def get_bad_idea()
     'helicopter',
     'comet',
     'the moon',
-    'jupiter colony'
+    'jupiter colony',
+    'outer space'
   ]
 
   items = [
@@ -78,7 +83,11 @@ def get_bad_idea()
     'helicopter',
     'boject',
     'meteor',
-    'horse'
+    'horse',
+    'dumpster',
+    'fire',
+    'dumpster fire',
+    'spaceship'
   ]
 
   goals = [
@@ -90,12 +99,14 @@ def get_bad_idea()
     'win the ' + items.sample,
     'make the best ' + items.sample,
     'destroy the ' + (characters + settings + items).sample,
-    'hide from the ' + characters.sample
+    'hide from the ' + characters.sample,
+    'collect the ' + items.sample,
   ]
 
   goals += [
     'never ' + goals.sample,
     'always ' + goals.sample,
+    'be first to ' + goals.sample
   ]
 
   contexts = [
@@ -110,5 +121,5 @@ def get_bad_idea()
     'main idea is ' + (contexts + goals).sample
   ]
 
-  return starters.sample + 'where ' + contexts.sample + ' and ' + contexts.sample
+  return starters.sample + 'where ' + contexts.sample
 end
