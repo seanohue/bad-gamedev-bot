@@ -1,4 +1,5 @@
 require 'twitter'
+require_relative './bot/idea'
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV["CONSUMER_KEY"]
@@ -7,4 +8,7 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV["ACCESS_SECRET"]
 end
 
-client.update("i have ideas 4 gaems just need programers to maek game (and friend) #myFirstTweet")
+bad_idea = get_bad_idea()
+
+puts(bad_idea)
+client.update(bad_idea)
