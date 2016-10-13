@@ -14,7 +14,9 @@ def get_bad_idea()
     'here is idea ',
     'my new project is ',
     'best project ',
-    'anyone want game '
+    'anyone want game ',
+    'wealthy game idea ',
+    'ambitious project: '
   ]
 
   characters = [
@@ -73,7 +75,8 @@ def get_bad_idea()
     'you play as ' + characters.sample,
     'it is set in ' + settings.sample,
     'enemies are ' + characters.sample,
-    'the goal is ' + goals.sample
+    'the goal is ' + goals.sample,
+    'you get the ' + items.sample
   ]
 
   return starters.sample + 'where ' + contexts.sample + ' and ' + contexts.sample
