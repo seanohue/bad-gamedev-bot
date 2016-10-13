@@ -70,7 +70,8 @@ def get_bad_idea()
     'win the ' + items.sample,
     'make the best ' + items.sample,
     'never ' + goals.sample,
-    'always ' + goals.sample
+    'always ' + goals.sample,
+    'destroy the ' + (characters + settings + items).sample
   ]
 
   contexts = [
@@ -78,7 +79,8 @@ def get_bad_idea()
     'it is set in ' + settings.sample,
     'enemies are ' + characters.sample,
     'the goal is ' + goals.sample,
-    'you get the ' + items.sample
+    'you get the ' + items.sample,
+    'main idea is ' + (goals + contexts).sample
   ]
 
   return starters.sample + 'where ' + contexts.sample + ' and ' + contexts.sample
