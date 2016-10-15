@@ -11,7 +11,7 @@ class TwitterClient
     end
   end
 
-  def tweet(msg)
+  def send(msg)
     @client.update(msg)
     puts("Tweeted: '#{msg}'")
   end
