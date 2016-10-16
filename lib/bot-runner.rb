@@ -4,8 +4,8 @@ class BotRunner
     @client = client
   end
 
-  def say_dumb_things()
-    @client.send('do u like gaem')
+  def say(s)
+    @client.send s
   end
 
   def get_timeline()

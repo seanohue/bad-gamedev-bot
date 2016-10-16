@@ -12,7 +12,7 @@ class Markov
 
   def get_sentence_from_dict(n)
     n = n || 1
-    return dict.generate_n_sentences n
+    return @dict.generate_n_sentences n
   end
 
 end
