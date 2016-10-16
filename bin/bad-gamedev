@@ -11,6 +11,8 @@ bot.get_timeline.each do |s|
   markov.add_str_to_dict s
 end
 
+markov.add_bad_ideas
+
 nonsense = markov.get_sentence_from_dict 2
 
 bot.say(nonsense)
