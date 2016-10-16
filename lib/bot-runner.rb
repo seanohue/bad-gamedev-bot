@@ -8,10 +8,11 @@ class BotRunner
     @client.send('do u like gaem')
   end
 
-  def print_timeline()
-    @client.get_own_timeline.each do |tweet|
-      puts("#{tweet.text}")
+  def get_timeline()
+    return @client.get_own_timeline.map do |tweet|
+      "#{tweet.text}"
     end
   end
+
 
 end

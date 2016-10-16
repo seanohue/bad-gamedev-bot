@@ -1,10 +1,8 @@
 require 'marky_markov'
 
-class DictionaryBuilder
+class Markov
 
   def initialize()
-    @dict_path = '../dicts/'
-    @dict_filename = 'bad_gamedev.mmd'
     @dict = MarkyMarkov::TemporaryDictionary.new
   end
 

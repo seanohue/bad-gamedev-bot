@@ -2,6 +2,10 @@
 # -*- mode: ruby -*-
 require_relative '../lib/twitter-client'
 require_relative '../lib/bot-runner'
+require_relative '../lib/markov'
 
 bot = BotRunner.new(TwitterClient.new)
-bot.print_timeline
+markov = Markov.new
+bot.get_timeline.each do |s|
+  Markov.add_str_to_dict s
+end
