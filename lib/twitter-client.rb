@@ -16,4 +16,8 @@ class TwitterClient
     puts("Tweeted: '#{msg}'")
   end
 
+  def get_own_timeline()
+    @client.user_timeline("ideas_4_games")
+  end
+
 end

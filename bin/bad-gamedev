@@ -4,4 +4,4 @@ require_relative '../lib/twitter-client'
 require_relative '../lib/bot-runner'
 
 bot = BotRunner.new(TwitterClient.new)
-bot.say_dumb_things
+bot.print_timeline
