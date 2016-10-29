@@ -12,7 +12,7 @@ class TwitterClient
   end
 
   def send(msg)
-    #@client.update(msg)
+    @client.update(msg)
     puts("Tweeted: '#{msg}'")
   end
 
@@ -24,8 +24,8 @@ class TwitterClient
     @client.search("##{hashtag}")
   end
 
-  def get_ten_most_favorited(tweets)
-    tweets.sort { |x, y| x.favorite_count <=> y.favorite_count }
+  def get_ten_original_tweets(tweets)
+    tweets.select { |tweet|  !tweet.include? "RT @" }
           .first(10)
   end
 

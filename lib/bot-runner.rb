@@ -32,7 +32,7 @@ class BotRunner
     ].map do |hashtag|
         get_tweet_content(@client.get_by_hashtag(hashtag))
       end
-    return @client.get_ten_most_favorited(sources).flatten
+    return @client.get_ten_original_tweets(sources).flatten
   end
 
 end
