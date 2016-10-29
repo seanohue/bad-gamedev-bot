@@ -24,11 +24,19 @@ class TwitterClient
     @client.search("##{hashtag}")
   end
 
+  def filter_spam(tweet)
+    ["RT", "://", "eddit", "2016"].each do |s|
+      if tweet.include?(s)
+        return false
+      end
+    end
+    return true
+  end
+
   def get_ten_original_tweets(tweets)
-    selection = tweets.select { |tweet|  !(tweet.include?("RT @") || tweet.include?("://") || tweet.include?("reddit")) }
-          .first(10)
-    puts selection
-    return selection
+    tweets
+      .first(100)
+      .select { |tweet| filter_spam(tweet) }
   end
 
 end
