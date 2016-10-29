@@ -20,4 +20,13 @@ class TwitterClient
     @client.user_timeline("ideas_4_games")
   end
 
+  def get_by_hashtag(hashtag)
+    @client.search("##{hashtag}")
+  end
+
+  def get_ten_most_favorited(tweets)
+    tweets.sort { |x, y| x.favorite_count <=> y.favorite_count }
+          .first(10)
+  end
+  
 end
