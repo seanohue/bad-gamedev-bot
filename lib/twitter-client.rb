@@ -12,7 +12,7 @@ class TwitterClient
   end
 
   def send(msg)
-    @client.update(msg)
+    #@client.update(msg)
     puts("Tweeted: '#{msg}'")
   end
 
@@ -28,5 +28,5 @@ class TwitterClient
     tweets.sort { |x, y| x.favorite_count <=> y.favorite_count }
           .first(10)
   end
-  
+
 end

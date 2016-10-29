@@ -20,19 +20,19 @@ class BotRunner
 
   def get_twitter_sources()
     sources = [
-      terriblegameideas,
-      greatgameideas,
-      awfulgameideas,
-      gameideas,
-      mygameideas,
-      gameidea,
-      horrorgameidea,
-      rpgidea,
-      videogameidea
+      "terriblegameideas",
+      "greatgameideas",
+      "awfulgameideas",
+      "gameideas",
+      "mygameideas",
+      "gameidea",
+      "horrorgameidea",
+      "rpgidea",
+      "videogameidea"
     ].map do |hashtag|
-        @client.get_by_hashtag(hashtag)
+        get_tweet_content(@client.get_by_hashtag(hashtag))
       end
     return @client.get_ten_most_favorited(sources).flatten
   end
-  
+
 end
