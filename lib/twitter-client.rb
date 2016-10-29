@@ -25,7 +25,7 @@ class TwitterClient
   end
 
   def get_ten_original_tweets(tweets)
-    tweets.select { |tweet|  !tweet.include? "RT @" }
+    tweets.select { |tweet|  !tweet.include?("RT @") && !tweet.include?("http") }
           .first(10)
   end
 
