@@ -7,10 +7,6 @@ require_relative '../lib/markov'
 bot = BotRunner.new(TwitterClient.new)
 markov = Markov.new
 
-bot.get_timeline.each do |s|
-  markov.add_str_to_dict s
-end
-
 bot.get_twitter_sources.each do |s|
   markov.add_str_to_dict s
 end
