@@ -4,7 +4,7 @@ class BotRunner
     @client = client
   end
 
-  def say(s)
+  def send(s)
     @client.send s
   end
 
