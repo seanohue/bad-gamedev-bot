@@ -18,9 +18,9 @@ end
 markov.add_bad_ideas
 
 begin
-  nonsense = markov.get_sentence_from_dict 2
+  nonsense = markov.get_sentence_from_dict 1
   bot.send(nonsense)
 rescue
-  nonsense = markov.get_sentence_from_dict 2
+  nonsense = markov.get_sentence_from_dict 1
   bot.send(nonsense)
 end

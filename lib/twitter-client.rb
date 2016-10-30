@@ -2,6 +2,8 @@ require 'twitter'
 
 class TwitterClient
 
+  @@spammy_strings = ["RT", "://", "eddit", "2016", "IDEA BOT"]
+
   def initialize()
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["CONSUMER_KEY"]
@@ -12,7 +14,7 @@ class TwitterClient
   end
 
   def send(msg)
-    #@client.update(msg)
+    @client.update(msg)
     puts("Tweeted: '#{msg}'")
   end
 
@@ -24,21 +26,18 @@ class TwitterClient
     @client.search("##{hashtag}")
   end
 
-  def filter_spam(tweet)
-    puts "checking for le spam of #{tweet}"
-    not_spam = true
-    ["RT", "://", "eddit", "2016", "IDEA BOT"].each do |s|
-      puts "checking against #{s}"
+  def is_not_spammy(tweet)
+    okay = true
+    @@spammy_strings.each do |s|
       if tweet.include?(s)
-        puts "this tweet is spammy: #{tweet}"
-        not_spam = false
+        okay = false
       end
     end
-    return not_spam
+    return okay
   end
 
-  def get_original_tweets(tweets)
-    return tweets.select { |tweet| filter_spam(tweet) }
+  def remove_spam(tweets)
+    return tweets.select { |tweet| is_not_spammy(tweet) }
   end
 
 end

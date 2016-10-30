@@ -9,7 +9,10 @@ class BotRunner
     "gameidea",
     "horrorgameidea",
     "rpgidea",
-    "videogameidea"
+    "videogameidea",
+    "awesomegame",
+    "coolgame",
+    "gameprototype"
   ]
 
   def initialize(client)
@@ -25,16 +28,14 @@ class BotRunner
   end
 
   def get_tweet_content(tweets)
-    return tweets.map do |tweet|
-      "#{tweet.text}"
-    end
+    tweets.map { |tweet| "#{tweet.text}" }
   end
 
   def get_twitter_sources()
-    sources = @@twitter_sources.map do |hashtag|
-        get_tweet_content(@client.get_by_hashtag(hashtag))
-      end
-    return sources.map { |source| @client.get_original_tweets(source) }.flatten
+    @@twitter_sources
+      .map { |hashtag| get_tweet_content(@client.get_by_hashtag(hashtag)) }
+      .map { |tweets| @client.remove_spam(tweets) }
+      .flatten
   end
 
 end
