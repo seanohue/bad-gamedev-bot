@@ -1,6 +1,6 @@
 class BotRunner
 
-  @@twitter_sources = [
+  @@twitter_hashtag_sources = [
     "terriblegameideas",
     "greatgameideas",
     "awfulgameideas",
@@ -32,7 +32,7 @@ class BotRunner
   end
 
   def get_twitter_sources()
-    @@twitter_sources
+    @@twitter_hashtag_sources
       .map { |hashtag| get_tweet_content(@client.get_by_hashtag(hashtag)) }
       .map { |tweets| @client.remove_spam(tweets) }
       .flatten

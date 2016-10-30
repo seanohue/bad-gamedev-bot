@@ -26,6 +26,10 @@ class TwitterClient
     @client.search("##{hashtag}")
   end
 
+  def remove_spam(tweets)
+    tweets.select { |tweet| is_not_spammy(tweet) }
+  end
+
   def is_not_spammy(tweet)
     okay = true
     @@spammy_strings.each do |s|
@@ -34,10 +38,6 @@ class TwitterClient
       end
     end
     return okay
-  end
-
-  def remove_spam(tweets)
-    return tweets.select { |tweet| is_not_spammy(tweet) }
   end
 
 end
