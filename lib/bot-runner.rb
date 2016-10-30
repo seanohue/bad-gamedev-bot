@@ -1,5 +1,17 @@
 class BotRunner
 
+  @@twitter_sources = [
+    "terriblegameideas",
+    "greatgameideas",
+    "awfulgameideas",
+    "gameideas",
+    "mygameideas",
+    "gameidea",
+    "horrorgameidea",
+    "rpgidea",
+    "videogameidea"
+  ]
+
   def initialize(client)
     @client = client
   end
@@ -19,20 +31,10 @@ class BotRunner
   end
 
   def get_twitter_sources()
-    sources = [
-      "terriblegameideas",
-      "greatgameideas",
-      "awfulgameideas",
-      "gameideas",
-      "mygameideas",
-      "gameidea",
-      "horrorgameidea",
-      "rpgidea",
-      "videogameidea"
-    ].map do |hashtag|
+    sources = @@twitter_sources.map do |hashtag|
         get_tweet_content(@client.get_by_hashtag(hashtag))
       end
-    return @client.get_ten_original_tweets(sources).flatten
+    return sources.map { |source| @client.get_original_tweets(source) }.flatten
   end
 
 end

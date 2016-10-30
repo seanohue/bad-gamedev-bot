@@ -12,7 +12,7 @@ class TwitterClient
   end
 
   def send(msg)
-    @client.update(msg)
+    #@client.update(msg)
     puts("Tweeted: '#{msg}'")
   end
 
@@ -25,18 +25,20 @@ class TwitterClient
   end
 
   def filter_spam(tweet)
-    ["RT", "://", "eddit", "2016"].each do |s|
+    puts "checking for le spam of #{tweet}"
+    not_spam = true
+    ["RT", "://", "eddit", "2016", "IDEA BOT"].each do |s|
+      puts "checking against #{s}"
       if tweet.include?(s)
-        return false
+        puts "this tweet is spammy: #{tweet}"
+        not_spam = false
       end
     end
-    return true
+    return not_spam
   end
 
-  def get_ten_original_tweets(tweets)
-    tweets
-      .first(100)
-      .select { |tweet| filter_spam(tweet) }
+  def get_original_tweets(tweets)
+    return tweets.select { |tweet| filter_spam(tweet) }
   end
 
 end
