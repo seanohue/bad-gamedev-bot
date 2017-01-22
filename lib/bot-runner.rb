@@ -1,17 +1,18 @@
 class BotRunner
 
   @@twitter_hashtag_sources = [
-    "terriblegameideas",
-    "greatgameideas",
-    "awfulgameideas",
-    "gameideas",
-    "mygameideas",
+    "terriblegameidea",
+    "greatgameidea",
+    "awfulgameidea",
+    "gameidea",
+    "mygameidea",
     "gameidea",
     "horrorgameidea",
     "rpgidea",
     "videogameidea",
-    "awesomegame",
-    "coolgame",
+    "awesomegameidea",
+    "coolgameidea",
+    "gameconcept",
     "gameprototype"
   ]
 
