@@ -38,8 +38,8 @@ class BotRunner
 
   def get_twitter_sources()
     @@twitter_hashtag_sources
-      .map { |hashtag| get_tweet_content(@client.get_by_hashtag(hashtag)) }
-      .map { |tweets| @client.remove_spam(tweets) }
+      .map { |hashtag| get_tweet_content(@twitter.get_by_hashtag(hashtag)) }
+      .map { |tweets| @twitter.remove_spam(tweets) }
       .flatten
   end
 
