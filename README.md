@@ -6,7 +6,7 @@ Well, right now, don't. It doesn't do much.
 
 But if you really want to, then just:
 - Create a `.rbenv-vars` file in the root of the repo.
-- Add your Twitter API credentials to the aforementioned file as the variables `CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, and `ACCESS_SECRET`.
+- Add your Twitter API credentials to the aforementioned file as the variables `TWITTER_CONSUMER_KEY`, `TWITTER_CONSUMER_SECRET`, `TWITTER_ACCESS_TOKEN`, and `TWITTER_ACCESS_SECRET`.
 - Install all the gems
 - Run `ruby bin/bad-gamedev` and it will tweet something dumb automatically.
 
