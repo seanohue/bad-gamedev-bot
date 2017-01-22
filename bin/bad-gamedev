@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 # -*- mode: ruby -*-
-require_relative '../lib/twitter-client'
-require_relative '../lib/bot-runner'
-require_relative '../lib/markov'
+require './lib/twitter-client'
+require './lib/bot-runner'
+require './lib/markov'
 
 bot = BotRunner.new(TwitterClient.new)
 markov = Markov.new
@@ -18,7 +18,7 @@ end
 markov.add_bad_ideas
 
 begin
-  nonsense = markov.get_sentence_from_dict 1
+  nonsense = markov.get_sentence_from_dict 2
   bot.send(nonsense)
 rescue
   nonsense = markov.get_sentence_from_dict 1
