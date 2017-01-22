@@ -15,16 +15,21 @@ class BotRunner
     "gameprototype"
   ]
 
-  def initialize(client)
-    @client = client
+  @@subreddit_sources = [
+    "gameideas"
+  ]
+
+  def initialize(twitter_client, reddit_client)
+    @twitter = twitter_client
+    @reddit  = reddit_client
   end
 
   def send(s)
-    @client.send s
+    @twitter.send s
   end
 
   def get_timeline()
-    get_tweet_content(@client.get_own_timeline)
+    get_tweet_content(@twitter.get_own_timeline)
   end
 
   def get_tweet_content(tweets)
