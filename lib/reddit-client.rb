@@ -15,4 +15,10 @@ class RedditClient
     @client.authorize!
   end
 
+  def get_hot_posts(subreddit)
+    @twitter.get_hot(subreddit)
+      .filter { |link| link.is_self == true }
+      .map { |link| "${link.title} ${link.selftext}".gsub(/[^0-9a-z]/i, '') }
+  end
+
 end

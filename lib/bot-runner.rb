@@ -36,6 +36,11 @@ class BotRunner
     tweets.map { |tweet| "#{tweet.text}" }
   end
 
+  def get_reddit_sources()
+    @subreddit_sources 
+      .map { |subreddit| @reddit.get_hot_posts(subreddit) }
+  end
+
   def get_twitter_sources()
     @@twitter_hashtag_sources
       .map { |hashtag| get_tweet_content(@twitter.get_by_hashtag(hashtag)) }
