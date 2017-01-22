@@ -9,11 +9,13 @@ require './lib/markov'
 bot = BotRunner.new(TwitterClient.new, RedditClient.new)
 markov = Markov.new
 
-bot.get_twitter_sources.each do |s|
-  markov.add_str_to_dict s
-end
+sources = [
+  bot.get_twitter_sources,
+  bot.get_timeline,
+  bot.get_reddit_sources
+].flatten
 
-bot.get_timeline.each do |s|
+sources.each do |s|
   markov.add_str_to_dict s
 end
 

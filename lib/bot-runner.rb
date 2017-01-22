@@ -37,8 +37,9 @@ class BotRunner
   end
 
   def get_reddit_sources()
-    @subreddit_sources 
+    @@subreddit_sources 
       .map { |subreddit| @reddit.get_hot_posts(subreddit) }
+      .flatten
   end
 
   def get_twitter_sources()
