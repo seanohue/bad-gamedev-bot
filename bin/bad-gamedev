@@ -1,7 +1,30 @@
 #!/usr/bin/env ruby
 # -*- mode: ruby -*-
-require_relative '../lib/twitter-client'
-require_relative '../lib/bot-runner'
+require './lib/twitter-client'
+require './lib/reddit-client'
 
-bot = BotRunner.new(TwitterClient.new)
-bot.say_dumb_things
+require './lib/bot-runner'
+require './lib/markov'
+
+bot = BotRunner.new(TwitterClient.new, RedditClient.new)
+markov = Markov.new
+
+sources = [
+  bot.get_twitter_sources,
+  bot.get_timeline,
+  bot.get_reddit_sources
+].flatten
+
+sources.each do |s|
+  markov.add_str_to_dict s
+end
+
+markov.add_bad_ideas
+
+begin
+  nonsense = markov.get_sentence_from_dict 2
+  bot.send(nonsense)
+rescue
+  nonsense = markov.get_sentence_from_dict 1
+  bot.send(nonsense)
+end
